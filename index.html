@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek - Yenny Chipamo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/LogoRosado.png">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <img class="logo" src="assets/Logo.svg" alt="Logo Alura Geek">
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="main-contenedor">
+        <section class="productos">
+            <h1>Mis Productos</h1>
+            <div data-product class="productos-contenedor">
+                <!--Los Productos se listarán aquí-->
+            </div>
+        </section>
+
+        <section class="agregar-producto">
+            <h1>Agregar Producto</h1>
+            <form class="form-contenedor" data-form>
+                <input data-name placeholder="Nombre..." type="text">
+                <input data-price placeholder="Precio..." type="text">
+                <input data-image placeholder="Imagen..." type="text">
+                <span data-message class="mensajeError"></span>
+                <div class="boton-contenedor">
+                    <button type="submit" class="boton-submit" id="boton">Enviar...</button>
+                    <button type="reset" class="boton-clear" id="boton">Limpiar...</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contenedor">
+            <div>
+                <img class="logo" src="./assets/Logo.svg" />
+            </div>
+            <p> Desarollado por Yenny Chipamo</p>
+            <small>Alura Latam 2024</small>
+        </div>
+    </footer>
+
+    <script type="module" src="js/controllers/main.js"></script>
+    <!--module pq estamos importando y exportando archivos-->
+</body>
+
+</html>

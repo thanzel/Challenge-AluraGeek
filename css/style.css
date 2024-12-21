@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;700&family=Press+Start+2P&family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --color-de-fondo: #f5f5f5;
+    /* --color-principal: #ff3f3f; */
+    --color-principal: #f83434;
+    --color-footer: #312629;
+    --color-linea: #eeeeee;
+    --color-texto-principal: #333333;
+    --color-texto-secundario: #666666;
+    --color-boton-primario: #ffffff;
+    --color-boton-secundario: #f83434;
+    --color-hover: #c02020;
+    --color-texto-footer: #fdf6f6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-de-fondo);
+    color: var(--color-texto-principal);
+    /* margin: 0; */
+    /* box-sizing: border-box; */
+    width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    /* background: url('https://www.pexels.com/photo/abstract-blurred-background-2431692/') no-repeat center center fixed;
+    background-size: cover; */
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-principal);
+    padding: 10px;
+}
+
+.logo {
+    max-width: 50%;
+     height: auto;
+}
+
+.main-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px; /*entre el header y el main*/
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px; /*espacio entre el titulo misproductos y el contenedor de los productos*/
+    width: 70%; /*ancho de la seccion izq*/    
+}
+
+.productos-contenedor { /*tamaño de la seccion producto, el contenedor*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;    
+    justify-content: flex-start;
+    overflow-y: auto; /* Habilita el scroll vertical */
+    scrollbar-color: rgba(248, 52, 52, 0.8) rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 80%;
+    max-height: 550px; /* Limita la altura del contenedor para que tenga scroll */
+    padding: 20px; /* Espacio interno del contenedor */
+    margin-bottom: 20px;
+    background-color: var(--color-linea);
+}
+
+.productos-contenedor::-webkit-scrollbar {
+    width: 10px; /* Ancho del scroll */
+}
+
+.card { /*tamaño de las card donde esta cada producto*/
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    flex-grow:  1; /*se ponen al lado del otro pero bajan a otra linea*/
+    gap: 10px;
+    margin: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--color-texto-principal);
+    
+}
+
+.card-img-product {
+    width: 200px;
+    height: 230px;
+}
+
+.card-img-product:hover {
+    transform: scale(1.1); /* Agranda la imagen un % */
+}
+
+.card-container--info {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    /* justify-content: space-between; */
+    /* background-color: #c02020; */
+    width: 100%;
+}
+
+.card-container--value {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.agregar-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%; /*ancho de la der*/
+}
+
+.mensajeError {
+    color: var(--color-boton-secundario);
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-de-fondo);
+    padding: 30px;
+    font-size: 20px;
+    color:  var(--color-boton-primario);
+    border: 1px solid var(--color-linea); /* Borde suave */
+    border-radius: 8px;
+    gap: 8px;
+}
+
+input {
+    border-radius:20px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid var(--color-linea);
+}
+
+#boton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--color-principal);
+    color:  var(--color-boton-primario);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#boton:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Botón primario */
+#boton.boton-submit {
+    background-color: var(--color-boton-primario); /* Fondo blanco */
+    color: var(--color-principal); /* Texto rojo */
+    border: 1px solid var(--color-principal); /* Borde rojo */
+}
+
+/* Hover para botón primario */
+#boton.boton-submit:hover {
+    background-color: var(--color-hover); /* Fondo rojo oscuro */
+    color:  var(--color-boton-primario); /* Texto blanco */
+}
+
+/* Botón secundario */
+#boton.boton-clear {
+    background-color: var(--color-boton-secundario); /* Fondo rojo */
+    color: var(--color-boton-primario); /* Texto blanco */
+    border: 1px solid var(--color-boton-secundario); /* Borde rojo */
+}
+
+.boton-delete {
+    border: none;
+    max-width: 25px;
+    height: auto;
+}
+
+.boton-delete img {
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-width: 100%; /* Asegura que no se salga de su contenedor */
+}
+
+.boton-delete img:hover {
+    transform: scale(1.5); /* Agranda la imagen un % */
+}
+
+/* Hover para botón secundario */
+#boton.boton-clear:hover {
+    background-color: var(--color-boton-primario); /* Fondo blanco */
+    color: var(--color-principal); /* Texto rojo */
+}
+
+.footer-contenedor {
+    font-family: 'Lora', serif; 
+    font-size: 0.9rem; 
+    background-color: var(--color-footer);
+    color: var(--color-texto-footer);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px; /* Agrega espacio interno */   
+}
+
+@media screen and (max-width: 768px) {
+    .main-contenedor {
+        flex-direction: column-reverse;
+        padding: 20px; 
+    }
+
+    .productos,
+    .agregar-producto {
+        width: 100%; /* Asegura que ambas secciones ocupen el 100% del ancho en pantallas pequeñas */
+    }
+ 
+    .productos-contenedor {
+        width: 100%;
+        padding: 3px; 
+    }    
+    .agregar-producto {
+        padding: 3px;
+    }
+
+    #boton {
+        padding: 10px 7px;
+    }
+
+    .mensajeError {
+        font-size: 10px;
+    }
+
+    .card-img-product {
+        width: 90px;
+        height: auto;
+    }
+    
+    .card-container--info p {
+        font-size: 10px;
+
+    }
+
+}

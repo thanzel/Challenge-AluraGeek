@@ -1,0 +1,40 @@
+
+instalar npm install -g json-server
+ver version: json-server --version
+
+
+npm init -y
+
+para crear la api face:
+cambiar en el package.json en scripts, esto:
+"test": "echo \"Error: no test specified\" && exit 1"
+por esto: "start": "json-server --watch ./database/db.json --port 3001"
+
+luego en el terminal:
+npm start
+
+aparecerá esto:
+un muñequito contento y:
+Endpoints:
+http://localhost:3001/products
+dar click y aparecera la api creada con el json db.json
+
+tambien se puede usar la https://mockapi.io/ , que hara lo mismo que el json-server pero en la nube,
+registrarse ycrear nuevo proyecto, click y en new resource poner el nombre del objeto: products
+y poner los nombres de los campos de products
+luego en boton data y copiar lo que tengo en el json dentro de products, entre los corchetes
+y luego click en el nro que esta arriba y alli esta el json en la nube
+
+
+Crear las carpetas js controllers y services
+
+ctrl c para salir del run
+
+
+con json-server:
+en powershell como admin poner:
+Set-ExecutionPolicy RemoteSigned
+poner la admin
+luego poner en la terminal de vsc: npx json-server --watch db.json --port 3001
+
+
